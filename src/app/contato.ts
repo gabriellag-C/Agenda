@@ -6,19 +6,13 @@ export class Contato {
     tipo: string;
 
     constructor(
-        nome: string,
-        telefone: string,
-        email: string,
-        aniversario: Date,
-        tipo: string
-    )
-    {
+        nome: string, telefone: string, email: string, aniversario: Date,
+        tipo: string) {
         this.nome = nome;
         this.telefone = telefone;
         this.email = email;
         this.aniversario = aniversario;
         this.tipo = tipo;
-
     }
     get nome(): string {
         return this.nome;
