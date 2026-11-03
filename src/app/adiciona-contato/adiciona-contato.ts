@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Contato } from '../contato';
+import { Contato, TipoContato } from '../contato';
 
 @Component({
   imports: [],
@@ -7,28 +7,24 @@ import { Contato } from '../contato';
   styleUrl: './adiciona-contato.scss',
   templateUrl: './adiciona-contato.html',
 })
+
+interface OpcoesSelect {
+  id: number 
+  value: TipoContato
+}
+
 export class AdicionaContato {
-  contatos: Contato[] = []
+  SELECT_TIPO: OpcoesSelect[] = [
+    {id: 1, value: 'AMIGO(A)'},
+    {id: 2, value: 'IFRN'},
+    {id: 3, value: 'TRABALHO'},
+    {id: 4, value: 'FAMILIA'},
+    {id: 5, value: 'OUTRO'}
+  ]
 
-  nome: string = '';
-  telefone: string = '';
-  email: string = '';
-  aniversario = string = '';
-  tipo: string = '';
+  adicionar(nome: string, email: string, aniversario: Date , tel: number, tipo: string){
+    let contato = new Contato (nome, email, aniversario, tel, tipo as TipoContato);
 
-  adicionarContato(): void {
-    if (this.nome && this.telefone && this.email) {
-      const novoContato = new Contato (
-        this.nome,
-        this.telefone,
-        this.email,
-        this.aniversario,
-        this.tipo
-      );
-
-      this.contatos.push(novoContato);
-    }
   }
-
 
 }

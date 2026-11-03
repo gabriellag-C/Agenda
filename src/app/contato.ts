@@ -1,13 +1,16 @@
+import { NonNullableFormBuilder } from "../../node_modules/@angular/forms/types/forms";
+
+export type TipoContato = 'AMIGO(A)' | 'IFRN' | 'TRABALHO' | 'FAMILIA' | 'OUTRO'
+
 export class Contato {
     nome: string;
-    telefone: string;
+    telefone: number;
     email: string;
     aniversario: Date;
-    tipo: string;
+    tipo: TipoContato;
 
-    constructor(
-        nome: string, telefone: string, email: string, aniversario: Date,
-        tipo: string) {
+    constructor ( nome: string, telefone: number, email: string, aniversario: Date,
+        tipo: TipoContato = 'AMIGO(A)') {
         this.nome = nome;
         this.telefone = telefone;
         this.email = email;
