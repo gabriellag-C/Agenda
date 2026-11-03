@@ -28,7 +28,9 @@
                 <option [id] = 'tipo.id'> {{tipo.value}}</option>
               }
         </div>
-        <button type="submit">Cadastrar</button>
+        <div>
+          <input type="button" value="Adicionar" (click) = "adicionar(tel: tek.value, tipo: tipo.value)">
+        </div>
     </form>
 
     <hr>
